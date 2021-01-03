@@ -17,6 +17,19 @@ public class G {
         int first = -1; //존재하지 않으면 -1
         int last = -1;  //존재하지 않으면 -1
 
+        for (int i = 0 ; i < n ; i++)
+        {
+            if ("AJOU" == school[i]) {
+                last = i;
+            }
+        }
+        for (int i = n ; i > 0 ; i--)
+        {
+            if ("AJOU" == school[i]) {
+                first = i;
+            }
+        }
+
 
         System.out.printf("%d %d\n", first, last );
     }
