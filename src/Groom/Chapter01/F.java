@@ -24,7 +24,8 @@ public class F {
             }
         }
         return -1;
-    }
+    } // 27분
+    //https://edu.goorm.io/learn/lecture/554/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EB%AC%B8%EC%A0%9C%ED%95%B4%EA%B2%B0%EA%B8%B0%EB%B2%95-%EC%9E%85%EB%AC%B8/lesson/1251267/%EC%9E%84%EC%8B%9C-1e-1j-%ED%95%B4%EC%84%A4%EA%B0%95%EC%9D%98
 
     public static void main(String[] args)
     {
