@@ -17,19 +17,23 @@ public class G {
         int first = -1; //존재하지 않으면 -1
         int last = -1;  //존재하지 않으면 -1
 
-        for (int i = 0 ; i < n ; i++)
-        {
-            if ("AJOU" == school[i]) {
-                last = i;
-            }
-        }
-        for (int i = n ; i > 0 ; i--)
-        {
-            if ("AJOU" == school[i]) {
-                first = i;
-            }
-        }
+        for(int i = 0 ; i < n ; i++)
+        {   // 모든 소속 school[i]에 대해 차례로
 
+            if( school[i].equals("AJOU") )
+            {   // 소속이 "AJOU"인 사람의 번호 i에 대해
+
+                if(first == -1)
+                {   // [0, i-1]에서 소속이 "AJOU"인 사람이 등장한 적 없던 경우
+                    // 이번이 첫 등장이다
+                    first = i + 1;
+                }
+
+                // 소속이 "AJOU"인 사람이 등장한 경우 덮어쓴다
+                // 이번이 마지막 등장이다
+                last = i + 1;
+            }
+        }
 
         System.out.printf("%d %d\n", first, last );
     }
