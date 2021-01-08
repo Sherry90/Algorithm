@@ -21,14 +21,24 @@ public class H {
     {
         int avr = 0;
         int sum = 0;
+        int diff = 0;
+        int min = 0;
+        int minIndex = 0;
         for (int i = 0 ; i < n ; i++){
             sum += data[i];
         }
         avr = sum/n;
-        for ()
+        min = avr;
+        for (int i = 0 ; i < n ; i++)
+        {
+            diff = Math.abs(avr - data[i]);
+            if (diff < min){
+                minIndex = i;
+            }
 
+        }
+        return minIndex+1;
 
-        return index;
     }
 
     public static void main(String[] args)
