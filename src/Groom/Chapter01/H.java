@@ -25,6 +25,7 @@ public class H {
             sum += data[i];
         }
         avr = sum/n;
+        for ()
 
 
         return index;
