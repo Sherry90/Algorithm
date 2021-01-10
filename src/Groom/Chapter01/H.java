@@ -19,26 +19,25 @@ public class H {
      */
     public static int findIndex(int[] data, int n)
     {
-        int avr = 0;
-        int sum = 0;
-        int diff = 0;
-        int min = 0;
-        int minIndex = 0;
-        for (int i = 0 ; i < n ; i++){
-            sum += data[i];
-        }
-        avr = sum/n;
-        min = avr;
-        for (int i = 0 ; i < n ; i++)
+        int x = 0; //존재하지 않는 경우는 없으므로, 일단 0이라고 가정
+        int S = 0; //모든 데이터의 합
+
+        for(int i = 0 ; i < n ; i++)
         {
-            diff = Math.abs(avr - data[i]);
-            if (diff < min){
-                minIndex = i;
-            }
-
+            S += data[i];
         }
-        return minIndex+1;
 
+        for(int i = 0 ; i < n ; i ++)
+        {
+            int dx = Math.abs(n * data[x] - S); //i까지의 원소들 중 평균과의 최소거리
+            int di = Math.abs(n * data[i] - S); //현재 원소와 평균과의 거리
+            if( di < dx )
+            {
+                x = i;
+            }
+        }
+
+        return x + 1; //실제 번호는 1부터 시작하므로 증가
     }
 
     public static void main(String[] args)
