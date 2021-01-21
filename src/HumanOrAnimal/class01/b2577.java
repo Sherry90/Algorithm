@@ -5,7 +5,7 @@ import java.lang.*;
 import java.util.*;
 import java.util.stream.Stream;
 
-public class p2577 {
+public class b2577 {
     public static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
