@@ -20,5 +20,21 @@ public class b1920 {
             arrayM[i] = scanner.nextInt();
         }
 
+        int count = 0;
+
+        for (int i = 0; i < arrayM.length; i++) {
+            count = 0;
+            for (int j = 0; j < arrayM.length; j++) {
+                if(arrayM[i] == arrayN[j]){
+                    count++;
+                }
+            }
+            if(count > 0){
+                System.out.println(1);
+            }
+            else System.out.println(0);
+
+        }
+
     }
 }
