@@ -5,19 +5,23 @@ import java.lang.*;
 import java.util.*;
 
 public class b1920 {
-    public static final Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) {
-        int n = scanner.nextInt();
+    public static void main(String[] args) throws IOException {
+        // 이분탐색이 뭔데 씨발
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = null;
+        st = new StringTokenizer(br.readLine()," ");
+
+        int n = Integer.parseInt(br.readLine());
         int[] arrayN = new int[n];
         for (int i = 0; i < arrayN.length; i++) {
-            arrayN[i] = scanner.nextInt();
+            arrayN[i] = Integer.parseInt(st.nextToken());
         }
 
-        int m = scanner.nextInt();
+        int m = Integer.parseInt(br.readLine());
         int[] arrayM = new int[m];
         for (int i = 0; i < arrayM.length; i++) {
-            arrayM[i] = scanner.nextInt();
+            arrayM[i] = Integer.parseInt(st.nextToken());
         }
 
         int count = 0;
