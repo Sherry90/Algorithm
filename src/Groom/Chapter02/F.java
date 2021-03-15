@@ -19,6 +19,16 @@ public class F {
             points[i] = new Point2D(x, y);
         }
 
+        int min_sqd = Integer.MAX_VALUE;
+        int min_cnt = 0;
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < i; j++) {
+
+
+            }
+        }
+
 
     }
 }
