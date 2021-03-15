@@ -67,4 +67,8 @@ class Point2D {
      * @return
      * @brief 2차원 평면 상에서 점 this부터 점 target까지 거리를 계산하는 함수
      */
+    public double getDistanceTo(Point2D target) {
+        double sqd = (double) this.getSquaredDistanceTo(target);
+        return Math.sqrt(sqd);
+    }
 }
