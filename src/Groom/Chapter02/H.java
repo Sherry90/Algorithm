@@ -16,11 +16,29 @@ public class H {
      */
     public static boolean isInside(long x, long y, long R)
     {
-
+        long sqd = x*x + y*y;
+        if ( sqd < R*R ){
+            return true;
+        }
+        return false;
     }
 
     public static void testCase(int caseIndex) {
         long R = scanner.nextLong();
+        long sum = 0;
+        for (long x = 0; x<= R; x ++){
+            long height = 0;
+            for (long y = R; y >=0; y--){
+                if(isInside(x, y, R)){
+                    height = (y+1);
+                    break;
+                }
+            }
+            sum += height;
+        }
+        System.out.printf("#%d\n", caseIndex);
+        System.out.printf("%d\n", sum * 4);
+
 
 
         System.out.printf("#%d\n", caseIndex);
