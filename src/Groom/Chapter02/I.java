@@ -1,4 +1,4 @@
-package HumanOrAnimal.class02;
+package Groom.Chapter02;
 
 import java.io.*;
 import java.lang.*;
