@@ -26,9 +26,10 @@ public class H {
     public static void testCase(int caseIndex) {
         long R = scanner.nextLong();
         long sum = 0;
-        for (long x = 0; x<= R; x ++){
+        long y = R;
+        for (long x = 0; x<= R; x++){
             long height = 0;
-            for (long y = R; y >=0; y--){
+            for (; y >=0; y--){
                 if(isInside(x, y, R)){
                     height = (y+1);
                     break;
@@ -39,9 +40,6 @@ public class H {
         System.out.printf("#%d\n", caseIndex);
         System.out.printf("%d\n", sum * 4);
 
-
-
-        System.out.printf("#%d\n", caseIndex);
     }
 
     public static void main(String[] args) throws Exception {
@@ -51,5 +49,4 @@ public class H {
             testCase(caseIndex);
         }
     }
-
 }
