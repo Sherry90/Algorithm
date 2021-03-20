@@ -15,13 +15,27 @@ public class I {
      */
     public static boolean isConsecutive(int[] data, int n)
     {
-        for (int i = 1; i < n; i++) {
-            if(data[i-1] != data[i]){
-                return false;
+        int maximum = data[0];
+        int minimum = data[0];
+
+        for(int i = 0; i < n ; i++)
+        {
+            if(maximum < data[i])
+            {
+                maximum = data[i];
+            }
+            if(minimum > data[i])
+            {
+                minimum = data[i];
             }
         }
 
-        return true;
+        if(maximum - minimum + 1 == n)
+        {
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public static void main(String[] args) throws Exception {
