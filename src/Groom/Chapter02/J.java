@@ -21,17 +21,24 @@ public class J {
     public static boolean isWinnable(int[] data, int n, int k) {
 
         int winCount = 0;
+        long sum = 0;
 
+        for (int i = 0; i <  k -1 ; i++) {
+            sum += data[i];
+        }
 
-        for (int i = 0; i+k-1 < n ; i++) {
-            long sum = 0;
-            for (int j = i; j <= i+k-1; j++) {
-                sum += data[j];
+        for (int i = 0; i + k -1 < n; i++) {
+            if(i > 0){
+                sum -= data[i-1];
             }
+
+            sum = sum + data[i + k-1];
+
             if(sum % 2 == 0){
-                winCount++;
+                winCount += 1;
                 break;
             }
+
         }
 
         if(winCount > 0)
