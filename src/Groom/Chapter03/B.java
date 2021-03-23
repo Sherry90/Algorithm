@@ -22,8 +22,12 @@ public class B {
         int minColor = seats[0]; //가장 적게 등장한 색상
         int maxColor = seats[0]; //가장 많이 등장한 색상
 
-
-
+        for (int i = 0; i < m; i++) {
+            Painting p = paintings[i];
+            for (int index = p.left ; index < p.right; index += 1) {
+                seats[index] = p.color;
+            }
+        }
 
         System.out.println(maxColor);
         System.out.println(minColor);
