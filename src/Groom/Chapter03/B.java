@@ -9,6 +9,17 @@ public class B {
     public static final int MAX_SEAT_NUMBER = 1000;
     public static final int MAX_COLOR_NUMBER = 100;
 
+
+    public static void fillFrequencyTable(int[] data, int n, int[] table) {
+        for (int i = 0; i < table.length; i++) {
+            table[i] = 0;
+        }
+        for (int i = 0; i < n; i++) {
+            int index = data[i];
+            table[index] += 1;
+        }
+    }
+
     /**
      *
      * @param n : 좌석의 수. 좌석은 0~(n-1)번의 번호를 가진다.
@@ -17,16 +28,47 @@ public class B {
      */
     public static void solve(int n, int m, Painting[] paintings)
     {
-        int[] seats = new int[n]; //seats[i] := i번 좌석의 최종 색상
+        int[] seats = new int[n];
+        for(int i = 0 ; i < n ; i ++)
+        {
+            seats[i] = 0;
+        }
+
+        //색칠 정보들이 주어진 순서대로 각 좌석을 색칠(색상 대입)한다.
+        for(int i = 0 ; i < m ; i ++)
+        {
+            //모든 색칠 정보 p에 대하여 차례로
+            Painting p = paintings[i];
+            for(int index = p.left ; index <= p.right; index += 1)
+            { //색칠한 영역에 대해 해당 색상을 대입한다.
+                seats[index] = p.color;
+            }
+        }
+
+        //모든 색칠을 완료한 이후의 색상 정보를 사용하여
+        //모든 색상에 대한 빈도수 테이블을 계산한다
+        int[] table = new int[MAX_COLOR_NUMBER];
+        fillFrequencyTable(seats, n, table);
 
         int minColor = seats[0]; //가장 적게 등장한 색상
         int maxColor = seats[0]; //가장 많이 등장한 색상
 
-        for (int i = 0; i < m; i++) {
-            Painting p = paintings[i];
-            for (int index = p.left ; index < p.right; index += 1) {
-                seats[index] = p.color;
+        for(int color = 0 ; color <= 99; color += 1)
+        {
+            if(table[color] == 0) {
+                continue;
             }
+            //한 번 이상 등장한 모든 색깔 color에 대하여
+
+            if(table[minColor] > table[color])
+            { //가장 적게 등장한 색이 아직 없거나, color가 더 적게 등장한 경우
+                minColor = color;
+            }
+            if(table[maxColor] < table[color])
+            { //가장 많이 등장한 색이 아직 없거나, color가 더 많이 등장한 경우
+                maxColor = color;
+            }
+
         }
 
         System.out.println(maxColor);
@@ -58,9 +100,9 @@ public class B {
 
 //좌석들을 한 번 색칠하는 이벤트에 대한 정보
 class Painting{
-    public int left;
-    public int right;
-    public int color;
+    int left;
+    int right;
+    int color;
     Painting(int left, int right, int color)
     {
         this.left = left;
