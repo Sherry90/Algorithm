@@ -21,20 +21,18 @@ public class C {
     {
         ArrayList<Integer> ret = new ArrayList<>();
 
+        // 오름차순 정렬
         int tmp = 0;
 
         for (int i = 0; i < data.length; i++) {
-
-            for (int j = 1; j < data.length; j++) {
-                if(data[j-1] == data[j]){
+            for (int j = 0; j < data.length; j++) {
+                if(data[i] > data[j]){
                     tmp = data[j];
+                    data[i] = data[j];
+                    data[j] = tmp;
                 }
-
             }
-
-
         }
-
 
 
         //오름차순 순서로 추가했기 때문에 ret에 대한 정렬은 불필요하다.
