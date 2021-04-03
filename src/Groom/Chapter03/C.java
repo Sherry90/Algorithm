@@ -9,6 +9,16 @@ public class C {
 
     public static final int MAX_SERIAL_NUMBER = 100000;
 
+    public static void fillFrequentlyTable(int[] data, int n, int[] table){
+        for (int i = 0; i < table.length; i++){
+            table[i] = 0;
+        }
+        for (int i = 0; i < n; i++){
+            int index = data[i];
+            table[index] += 1;
+        }
+    }
+
 
     /**
      * data[0] ~ data[n-1]에서 중복이 존재하지 않는 원소들을 반환한다.
@@ -21,19 +31,15 @@ public class C {
     {
         ArrayList<Integer> ret = new ArrayList<>();
 
-        // 오름차순 정렬
-        int tmp = 0;
+        int[] table = new int[MAX_SERIAL_NUMBER+1];
+        fillFrequentlyTable(data, n, table);
 
-        for (int i = 0; i < data.length; i++) {
-            for (int j = 0; j < data.length; j++) {
-                if(data[i] > data[j]){
-                    tmp = data[j];
-                    data[i] = data[j];
-                    data[j] = tmp;
-                }
+        for (int number = 1 ;number <= MAX_SERIAL_NUMBER; number++)
+        {
+            if(table[number] == 1) {
+                ret.add(number);
             }
         }
-
 
         //오름차순 순서로 추가했기 때문에 ret에 대한 정렬은 불필요하다.
         return ret;
