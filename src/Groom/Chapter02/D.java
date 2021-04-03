@@ -1,7 +1,5 @@
 package Groom.Chapter02;
 
-import sun.font.DelegatingShape;
-
 import java.io.*;
 import java.lang.*;
 import java.util.*;
