@@ -19,6 +19,13 @@ public class F {
     public static Range getBestRange(int n, int m, int[] cards, Range[] ranges) {
         Range answer = ranges[0];
 
+        /*
+        int sum= 0;
+        for(int i = answer.left; i <= answer.right; i++ ){
+            sum += cards[i];
+        }
+        System.out.println(sum);
+         */
 
         return answer;
     }
