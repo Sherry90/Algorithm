@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78ba1515-46d1-443e-b6f3-4c2bc2c42f08" name="디폴트 변경 목록" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Groom/Chapter03/F.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Groom/Chapter03/E.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Groom/Chapter03/E.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,6 +13,13 @@
   </component>
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -79,7 +87,7 @@
       <updated>1617447909438</updated>
       <workItem from="1617447912719" duration="427000" />
       <workItem from="1617451503486" duration="479000" />
-      <workItem from="1617525538672" duration="2148000" />
+      <workItem from="1617525538672" duration="2454000" />
     </task>
     <task id="LOCAL-00001" summary="D">
       <created>1617448050433</created>
@@ -116,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617527490724</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="E">
+      <created>1617527798974</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1617527798974</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
