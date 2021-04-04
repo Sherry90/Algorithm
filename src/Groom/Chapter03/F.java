@@ -19,24 +19,24 @@ public class F {
     public static Range getBestRange(int n, int m, int[] cards, Range[] ranges) {
         Range answer = ranges[0];
 
-        /*
-        int sum= 0;
-        for(int i = answer.left; i <= answer.right; i++ ){
-            sum += cards[i];
-        }
-        System.out.println(sum);
-         */
-
+        // 누적 합 배열을 계산한다
+        // rangeSum[i] := cards[1] ~ cards[i]의 합
         long[] rangeSum = new long[n+1];
         rangeSum[0] = 0;
-        for(int i = 1 ; i<n; i++){
+        for(int i = 1; i <= n ; i++)
+        {
             rangeSum[i] = rangeSum[i-1] + cards[i];
         }
 
-        for(Range r : ranges){
+        for(Range r : ranges)
+        { // 모든 범위 정보 r에 대하여
+
+            // 해당 범위의 누적합을 계산한다
             r.totalPoint = rangeSum[r.right] - rangeSum[r.left-1];
 
-            if(r.totalPoint > answer.totalPoint){
+            // 현재까지 구한 가장 큰 누적합보다 더 크다면 갱신한다
+            if(r.totalPoint > answer.totalPoint)
+            {
                 answer = r;
             }
         }

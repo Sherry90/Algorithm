@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78ba1515-46d1-443e-b6f3-4c2bc2c42f08" name="디폴트 변경 목록" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Groom/Chapter03/G.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Groom/Chapter03/F.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Groom/Chapter03/F.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +102,7 @@
       <workItem from="1617447912719" duration="427000" />
       <workItem from="1617451503486" duration="479000" />
       <workItem from="1617525538672" duration="2760000" />
-      <workItem from="1617528561508" duration="4010000" />
+      <workItem from="1617528561508" duration="4165000" />
     </task>
     <task id="LOCAL-00001" summary="D">
       <created>1617448050433</created>
@@ -165,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617533490655</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="F">
+      <created>1617533629124</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1617533629124</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
