@@ -27,6 +27,20 @@ public class F {
         System.out.println(sum);
          */
 
+        long[] rangeSum = new long[n+1];
+        rangeSum[0] = 0;
+        for(int i = 1 ; i<n; i++){
+            rangeSum[i] = rangeSum[i-1] + cards[i];
+        }
+
+        for(Range r : ranges){
+            r.totalPoint = rangeSum[r.right] - rangeSum[r.left-1];
+
+            if(r.totalPoint > answer.totalPoint){
+                answer = r;
+            }
+        }
+
         return answer;
     }
 
