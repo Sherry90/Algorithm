@@ -18,6 +18,16 @@ public class E {
     public static int getCoveredArea(Paper[] papers, int n) {
         int answer = 0; //색종이들이 덮은 영역의 총 넓이
         int[][] board = new int[100][100];
+
+        for(Paper p : papers){
+            for(int row = p.bottomRow; row <= p.topRow; row++){
+                for(int col = p.leftColumn; col <= p.rightColumn; col++){
+                    board[row][col]++;
+                }
+            }
+        }
+
+
         // 도화지에 존재하는 모든 격자에 대하여
         for (int row = 0; row < 100; row++) {
             for (int col = 0; col < 100; col++) {
