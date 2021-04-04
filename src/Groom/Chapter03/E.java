@@ -15,26 +15,29 @@ public class E {
      * @param n
      * @return
      */
-    public static int getCoveredArea(Paper[] papers, int n)
-    {
+    public static int getCoveredArea(Paper[] papers, int n) {
         int answer = 0; //색종이들이 덮은 영역의 총 넓이
-
-
-
+        int[][] board = new int[100][100];
+        // 도화지에 존재하는 모든 격자에 대하여
+        for (int row = 0; row < 100; row++) {
+            for (int col = 0; col < 100; col++) {
+                if (board[row][col] > 0) {
+                    answer += 1;
+                }
+            }
+        }
         return answer;
     }
 
     public static void main(String[] args) throws Exception {
         int caseSize = scanner.nextInt();
 
-        for (int caseIndex = 1; caseIndex <= caseSize; caseIndex += 1)
-        { //각 테스트케이스에 대하여
+        for (int caseIndex = 1; caseIndex <= caseSize; caseIndex += 1) { //각 테스트케이스에 대하여
             int n = scanner.nextInt();
 
             //색종이들의 정보를 입력 받는다.
             Paper[] papers = new Paper[n];
-            for(int i = 0 ; i < n ; i ++)
-            {
+            for (int i = 0; i < n; i++) {
                 int leftX = scanner.nextInt();
                 int bottomY = scanner.nextInt();
                 papers[i] = new Paper(leftX, bottomY);
@@ -50,14 +53,13 @@ public class E {
 }
 
 
-class Paper
-{
+class Paper {
     int leftColumn;   //가장 왼쪽 격자의 열 번호
     int rightColumn;  //가장 오른쪽 격자의 열 번호
     int topRow;       //가장 위쪽 격자의 행 번호
     int bottomRow;    //가장 아래쪽 격자의 행 번호
-    Paper(int xPos, int yPos)
-    {
+
+    Paper(int xPos, int yPos) {
         this.leftColumn = xPos;
         this.rightColumn = this.leftColumn + 9;
         this.bottomRow = yPos;
