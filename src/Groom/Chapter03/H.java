@@ -32,6 +32,8 @@ public class H {
                 // x와 k가 상수이므로 y를 계산할 수 있다.
                 int y = k - x;
 
+                // Arrays.binarySearch(int[] a, int key) 는 배열 a안에 key가 존재할 경우
+                // key의 index를 return, 없으면 -1을 반환한다.
                 if(Arrays.binarySearch(cards, y) >= 0 )
                 {  //배열에 y가 존재한다 <==> x+y=k가 되는 <x, y>가 존재한다.
                     //이를 표시하고 나간다.
