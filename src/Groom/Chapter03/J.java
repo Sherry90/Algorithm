@@ -19,6 +19,52 @@ public class J {
     {
         ArrayList<Integer> possibleTargets = new ArrayList<>(); //만들 수 있는 당첨번호들
 
+        // 두 카드의 합을 모두 저장한다.
+        ArrayList<CardPair> pairs = new ArrayList<>();
+        for(int i = 0; i < n ; i ++)
+        {
+            for(int j = 0 ; j <= i; j++)
+            {   // 모든 카드의 조합 <i, j>에 대하여, 두 카드를 짝지은 정보를 모두 저장한다
+                CardPair pair = new CardPair( cards[i], cards[j] );
+                pairs.add(pair);
+            }
+        }
+
+        // 바이너리 서치를 할 수 있도록 정렬한다.
+        // 클래스 내에서 비교 연산자를 정의했기 때문에, 정렬할 수 있다.
+        Collections.sort(pairs);
+
+        for(int k : target)
+        { // 검사해 볼 모든 당첨 후보번호 k에 대하여
+            boolean possible = false;
+            for(CardPair knownPair : pairs)
+            {   // 임의의 두 카드 < p, q >를 나타내는 짝 knownPair에 대하여
+                int x = knownPair.sumOfCards; // x = ( p + q ) 라고 하자.
+
+                // 남은 두 카드를 r, s라고 한다면
+                // y = r + s라고 할 때 아래가 성립한다.
+                int y = k - x;
+                CardPair targetPair = new CardPair(y); //두 카드의 합이 y가 되는 짝이 있다고 가정하자
+
+                //그런 짝이 pairs에 존재한다는 말은?
+                //기존에 존재하던 cards[]의 두 카드의 합으로, y를 만들어낼 수 있다!
+                int pairIndex = Collections.binarySearch(pairs, targetPair);
+                if( pairIndex >= 0)
+                {   // 그러므로, k는 네 카드의 합으로 표현 가능하다
+                    possible = true;
+
+                    // 아래와 같이 어떤 네 카드가 선택되었는지도 알 수 있다!
+                    //CardPair pair1 = knownPair;
+                    //CardPair pair2 = pairs.get( pairIndex );
+                    break;
+                }
+            }
+
+            if(possible)
+            {
+                possibleTargets.add(k);
+            }
+        }
 
         Collections.sort(possibleTargets);
         return possibleTargets;
