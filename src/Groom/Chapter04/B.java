@@ -22,6 +22,11 @@ public class B {
 
         for(int i = 0 ; i < m ; i ++)
         {
+            int useId = ids[i];
+            int ticketIndex = table.findEmptyIndexByUserId(useId);
+
+            tickets.add(ticketIndex);
+            table.setUsed(ticketIndex, true);
 
         }
         return tickets;
@@ -57,6 +62,7 @@ class TicketTable
     {
         this.length = length;
         this.used = new boolean[length];
+        Arrays.fill(this.used, false);
     }
 
     /**
@@ -64,7 +70,11 @@ class TicketTable
      */
     public int findEmptyIndexByUserId(int userId)
     {
-
+        int index = userId % length;
+        while (isEmpty(index) == true){
+            index = (index + 1) % length;
+        }
+        return index;
     }
 
     /**
@@ -72,7 +82,7 @@ class TicketTable
      */
     public boolean isEmpty(int ticketIndex)
     {
-
+        return used[ticketIndex];
     }
 
     /**
@@ -80,6 +90,6 @@ class TicketTable
      */
     public void setUsed(int index, boolean status)
     {
-
+        this.used[index] = status;
     }
 }
