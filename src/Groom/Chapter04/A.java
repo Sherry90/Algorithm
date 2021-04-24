@@ -1,5 +1,9 @@
 package Groom.Chapter04;
 
+import java.io.*;
+import java.lang.*;
+import java.util.*;
+
 public class A {
     public static final Scanner scanner = new Scanner(System.in);
 
@@ -35,11 +39,13 @@ class SudokuBoard{
     // 칸의 번호로 행의 번호를 계산하는 메소드
     public int getRowByIndex(int index)
     {
+        return (index-1) / 9 + 1;
     }
 
     // 칸의 번호로 열의 번호를 계산하는 메소드
     public int getColByIndex(int index)
     {
+        return (index-1) % 9 + 1;
     }
 
     // 칸의 번호로 그룹 번호를 계산하는 메소드
@@ -53,11 +59,14 @@ class SudokuBoard{
     // 칸의 위치 (행, 열)로 그룹 번호를 계산하는 메소드
     public int getGroupByPosition(int row, int column)
     {
+        int left = ((row-1)/3)*3 + 1;
+        int offset = ((column-1)/3);
+        return left + offset;
     }
 
     // 칸의 위치 (행, 열)로 칸의 번호를 계산하는 메소드
     public int getIndexByPosition(int row, int column)
     {
-
+        return (row - 1) * 9 + (column - 1) % 9 + 1;
     }
 }
