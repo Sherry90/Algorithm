@@ -42,22 +42,14 @@ class MathUtil{
      */
     static long getGCD(long a, long b)
     {
-        long min = a;
-        long gcd = 0;
-        if(a>b){
-            min = b;
-        } else {
-            min = a;
-        }
+        long c = a % b;
+        while (c != 0) {
+            a = b;
+            b = c;
+            c = a % b;
 
-        for(long i = min ; i >= 1 ; i--){
-            if(a % i == 0 && b % i == 0){
-                gcd = i;
-                break;
-            }
         }
-
-        return gcd;
+        return b;
     }
 
     /**
@@ -69,21 +61,8 @@ class MathUtil{
      */
     static long getLCM(long a, long b)
     {
-        long max = 0;
-        long lcm = a*b;
-        if(a>b){
-            max = a;
-        } else {
-            max = b;
-        }
-
-        for(long i = max ; i <= lcm ; i++){
-            if(i % a == 0 && i % b == 0){
-                lcm = i;
-                break;
-            }
-        }
-        return lcm;
+        return a * b / getGCD(a,b);
 
     }
+
 }
