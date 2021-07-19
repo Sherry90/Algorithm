@@ -1,21 +1,22 @@
-package baekjoon;
+package baekjoon.step2;
 
 import java.io.*;
 import java.lang.*;
 import java.util.*;
 
-public class b10430 {
+public class b1330 {
     public static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
         int A = scanner.nextInt();
         int B = scanner.nextInt();
-        int C = scanner.nextInt();
 
-        System.out.println((A+B)%C);
-        System.out.println(((A%C) + (B%C))%C);
-        System.out.println((A*B)%C);
-        System.out.println(((A%C) * (B%C))%C);
-
+        if(A > B){
+            System.out.println(">");
+        } else if(A < B){
+            System.out.println("<");
+        } else {
+            System.out.println("==");
+        }
     }
 }
