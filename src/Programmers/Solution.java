@@ -1,25 +1,35 @@
 package Programmers;
 
 class Solution {
+    public static long solution(int a, int b) {
+        long answer = 0;
 
-    public static String solution(String s) {
-        String answer = "";
+        int min = 0;
+        int max = 0;
 
-        int length = s.length();
-        int middle = 0;
+        if(a == b){
+            answer = (long)a;
+        } else {
+            if(a > b){
+                max = a;
+                min = b;
+            } else if (a < b){
+                max = b;
+                min = a;
+            }
 
-        if(length % 2 != 0){
-            middle = length/2;
-            answer = s.substring(middle,middle);
+            for (int i = min; i <= max; i++) {
+                answer += i;
+            }
         }
-
-        System.out.println(answer);
-
 
         return answer;
     }
 
     public static void main(String[] args) {
-        solution("abcde");
+        int a = 5;
+        int b = 3;
+        long result = solution(a, b);
+        System.out.println(result);
     }
 }
