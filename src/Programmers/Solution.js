@@ -1,22 +1,20 @@
-function solution(arr) {
-    let answer = [];
+function solution(n) {
+    let answer = "";
 
-    let min = arr[0];
+    n = n
+        .toString()
+        .split("")
+        .map((str) => Number(str))
+        .sort(function(a, b)  {
+            return b - a;
+        });
 
-    let minIndex = 0;
-
-    if(arr.length === 1){
-        arr[0] = -1;
-    } else {
-        for (let i = 0; i < arr.length; i++) {
-            if(min > arr[i]){
-                min = arr[i];
-                minIndex = i;
-            }
-        }
-
-        arr.splice(minIndex, 1);
+    for(let i = 0 ; i < n.length; i++){
+        answer += String(n[i]);
     }
 
-    return arr;
+    answer = Number(answer);
+
+
+    return answer;
 }
