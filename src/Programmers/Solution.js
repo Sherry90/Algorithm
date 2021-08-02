@@ -1,20 +1,11 @@
-function solution(n) {
-    let answer = "";
+function solution(s) {
+    let answer = false;
 
-    n = n
-        .toString()
-        .split("")
-        .map((str) => Number(str))
-        .sort(function(a, b)  {
-            return b - a;
-        });
-
-    for(let i = 0 ; i < n.length; i++){
-        answer += String(n[i]);
+    if(!Number(s) || (s.length != 4 || s.length != 6)){
+        answer = false;
+    } else if(Number(s) && (s.length == 4 || s.length == 6)) {
+        answer = true;
     }
-
-    answer = Number(answer);
-
 
     return answer;
 }
