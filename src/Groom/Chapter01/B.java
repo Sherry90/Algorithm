@@ -8,21 +8,19 @@ public class B {
     public static final Scanner scanner = new Scanner(System.in);
 
     /**
-     * 배열의 최대값을 계산하는 함수.
+     * 정수 배열의 모든 원소의 합을 계산하는 함수
      *
      * @param data
      * @param n
-     * @return data[0] ~ data[n-1]중 최대값.
+     * @return data[0] ~ data[n-1]의 합
      */
-    public static int getMax(int[] data, int n) {
-        int max = data[0];
-        for (int i = 0; i < data.length; i++) {
-            if(max < data[i]){
-                max = data[i];
-            }
+    public static int getSum(int[] data, int n) {
+        int answer = 0;
 
+        for(int i = 0; i < n; i++){
+            answer += data[i];
         }
-        return max;
+        return answer;
     }
 
     public static void main(String[] args) throws Exception {
@@ -31,10 +29,7 @@ public class B {
         for (int i = 0; i < n; i++) {
             data[i] = scanner.nextInt();
         }
-
-        int answer = getMax(data, n);
-
+        int answer = getSum(data, n);
         System.out.println(answer);
     }
-
 }

@@ -20,16 +20,12 @@ public class A {
         } else {
             return b;
         }
-
     }
 
     public static void main(String[] args) throws Exception {
         int p = scanner.nextInt();
         int q = scanner.nextInt();
-
         int answer = getMax(p, q);
-
         System.out.println(answer);
     }
-
 }

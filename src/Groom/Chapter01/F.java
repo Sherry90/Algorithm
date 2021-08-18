@@ -4,6 +4,7 @@ import java.io.*;
 import java.lang.*;
 import java.util.*;
 
+
 public class F {
     public static final Scanner scanner = new Scanner(System.in);
 
@@ -16,13 +17,14 @@ public class F {
      */
     public static int findIndex(int[] data, int n, int m)
     {
+        int result = -1;
+
         for (int i = 0; i < data.length; i++) {
             if(data[i] == m){
-                return i;
+                result = i;
             }
-
         }
-        return -1;
+        return result;
     }
 
     public static void main(String[] args)

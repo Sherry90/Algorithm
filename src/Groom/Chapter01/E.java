@@ -17,26 +17,22 @@ public class E {
      */
     public static void solve(int[] data, int n, int p, int q)
     {
-        int sum = 0;
-        int count = 0;
-        String yn = "";
+        int peopleCount = 0;
+        int weight = 0;
+        String possible = "NO";
 
         for (int i = 0; i < data.length; i++) {
-            if (data[i] <= p){
-                sum += data[i];
-                count++;
+            if(data[i] <= p){
+                peopleCount++;
+                weight += data[i];
             }
-
         }
 
-        if(sum <= q){
-            yn = "YES";
-        } else {
-            yn = "NO";
+        if(weight <= q){
+            possible = "YES";
         }
-
-        System.out.println(count+" "+sum);
-        System.out.println(yn);
+        System.out.println(peopleCount+" "+weight);
+        System.out.println(possible);
     }
 
 
