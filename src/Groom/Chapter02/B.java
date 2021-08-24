@@ -4,6 +4,7 @@ import java.io.*;
 import java.lang.*;
 import java.util.*;
 
+
 public class B {
     public static final Scanner scanner = new Scanner(System.in);
 
@@ -15,17 +16,17 @@ public class B {
      */
     public static boolean isOrdered(int[] data, int n)
     {
-        boolean tf = true;
+        boolean isTrue = true;
 
-        for (int i = 1; i < data.length; i++) {
+        for (int i = 1; i < n; i++) {
             if(data[i-1] > data[i]){
-                tf = false;
+                isTrue = false;
                 break;
             }
 
         }
 
-        return tf;
+        return isTrue;
     }
 
 

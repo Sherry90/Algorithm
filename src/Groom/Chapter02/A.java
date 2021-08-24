@@ -1,8 +1,8 @@
 package Groom.Chapter02;
+
 import java.io.*;
 import java.lang.*;
 import java.util.*;
-
 
 public class A {
     public static final Scanner scanner = new Scanner(System.in);
@@ -16,18 +16,21 @@ public class A {
      */
     public static int getMaximumHeight(int[] height, int[] month, int n, int m)
     {
-        int tall = -1;
+        int index = 0;
+        int max = -1;
 
         for (int i = 0; i < n; i++) {
-            if(m == month[i]){
-                tall = height[i];
-                if(tall < height[i]){
-                    tall = height[i];
+            if (m == month[i]) {
+                index = i;
+                if(max < height[index]){
+                    max = height[index];
                 }
             }
-            
+
         }
-        return tall;
+
+        return max;
+
     }
 
     public static void main(String[] args) throws Exception {
