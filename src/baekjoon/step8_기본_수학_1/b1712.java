@@ -7,22 +7,22 @@ public class b1712 {
     public static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        long A = scanner.nextInt();
-        long B = scanner.nextInt();
-        long C = scanner.nextInt();
+        Scanner scanner = new Scanner(System.in);
 
-        long count = 0;
 
-        count = A / (C-B) +1 ;
+        int A = scanner.nextInt();	// 불변 비용
+        int B = scanner.nextInt();	// 가변 비용
+        int C = scanner.nextInt(); 	// 상품 가격
 
-        if(B >= C){
-            count = -1;
+        int counter = 0;
 
-        } else {
-            count = A / (C-B) +1 ;
+        if (C <= B) {
+            counter = -1;
         }
-        System.out.println(count);
-
+        else {
+            counter = (A/(C-B))+1;
+        }
+        System.out.println(counter);
     }
 
 }
