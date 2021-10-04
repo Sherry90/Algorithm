@@ -1,28 +1,25 @@
 package baekjoon.step8_기본_수학_1;
 
-import java.lang.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
+import java.util.StringTokenizer;
 
 public class b2869 {
-    public static final Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) {
-        int A = scanner.nextInt();
-        int B = scanner.nextInt();
-        int V = scanner.nextInt();
-        scanner.close();
+    public static void main(String[] args) throws IOException {
 
-        long number = 0;
-        long count = 0;
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
-        while(true){
-            number = number + A;
-            count++;
-            if(V <= number){
-                break;
-            }
-            number = number - B;
-        }
-        System.out.println(count);
+        int up = Integer.parseInt(st.nextToken());
+        int down = Integer.parseInt(st.nextToken());
+        int length = Integer.parseInt(st.nextToken());
+
+        int day = (length - down) / (up - down);
+        if ((length - down) % (up - down) != 0)
+            day++;
+
+        System.out.println(day);
     }
 }
