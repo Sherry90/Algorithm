@@ -5,7 +5,7 @@ const rl = readline.createInterface({
 });
 
 rl.on("line", line => {
-    console.log(Math.max(line.split(" ")[0], line.split(" ")[1]));
+    console.log(Math.max(parseInt(line.split(" ")[0]) ,parseInt(line.split(" ")[1])));
     rl.close();
 }).on("close", () => {
     process.exit();
