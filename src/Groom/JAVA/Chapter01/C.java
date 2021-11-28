@@ -1,26 +1,27 @@
-package Groom.Chapter01;
+package Groom.JAVA.Chapter01;
 
-import java.io.*;
 import java.lang.*;
 import java.util.*;
 
-public class B {
+public class C {
     public static final Scanner scanner = new Scanner(System.in);
 
     /**
-     * 정수 배열의 모든 원소의 합을 계산하는 함수
+     * 배열의 최대값을 계산하는 함수.
      *
      * @param data
      * @param n
-     * @return data[0] ~ data[n-1]의 합
+     * @return data[0] ~ data[n-1]중 최대값.
      */
-    public static int getSum(int[] data, int n) {
-        int answer = 0;
+    public static int getMax(int[] data, int n) {
+        int max = data[0];
 
-        for(int i = 0; i < n; i++){
-            answer += data[i];
+        for (int i = 0; i < data.length; i++) {
+            if(max < data[i]){
+                max = data[i];
+            }
         }
-        return answer;
+        return max;
     }
 
     public static void main(String[] args) throws Exception {
@@ -29,7 +30,10 @@ public class B {
         for (int i = 0; i < n; i++) {
             data[i] = scanner.nextInt();
         }
-        int answer = getSum(data, n);
+
+        int answer = getMax(data, n);
+
         System.out.println(answer);
     }
+
 }

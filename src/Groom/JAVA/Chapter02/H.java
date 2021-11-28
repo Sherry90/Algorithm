@@ -1,6 +1,5 @@
-package Groom.Chapter02;
+package Groom.JAVA.Chapter02;
 
-import java.io.*;
 import java.lang.*;
 import java.util.*;
 
